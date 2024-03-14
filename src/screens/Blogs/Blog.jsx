@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Markdown from "marked-react";
 import "./Blog.css";
-import BlogCard from "../../components/organisms/Blogcard/Blogcard";
+// import BlogCard from "../../components/organisms/Blogcard/Blogcard";
 import { getBlog } from "../../services/api";
 import { alert } from "../../components/molecules/CustomAlert/alert";
 
