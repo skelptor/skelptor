@@ -1,0 +1,60 @@
+.textfield-container{
+	color: var(--brown);
+}
+.textfield-container{
+	color: black;
+	font-size: 20px;
+	/* margin: 20px 0; */
+}
+.textfield-container .textfield{
+	background-color: white;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	/* width: 200px; */
+	/* height: 200px; */
+	border-radius: 5px;
+}
+.textfield-container .textfield .start-icon{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	height: 100%;
+	border-right: 1px solid rgba(0, 0, 0, 0.15);
+}
+.textfield-container .textfield .end-icon{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	padding: 10px;
+	height: 100%;
+	/* border-left: 1px solid rgba(0, 0, 0, 0.15); */
+}
+.textfield-container .textfield .material-icons{
+	color: black;
+}
+.textfield-container .textfield input{
+	/* font-family: 'Gotham', inter; */
+	padding: 12px 20px;
+	border-radius: 5px;
+	background-color: white;
+	outline: none;
+	border: none;
+	color: var(--brown);
+	color: black;
+	font-size: 15px;
+	box-shadow: 0px 5px 50px 0px rgba(0, 0, 0, 0.05);
+	z-index: 2;
+
+}
+.textfield-container.fullWidth,
+.textfield-container.fullWidth .textfield{
+	width: 100%;
+}
+.textfield-container.fullWidth .textfield input{
+	width: 100%;
+}

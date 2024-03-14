@@ -1,0 +1,25 @@
+:root {
+  /* max-width: 1280px; */
+  margin: 0;
+  padding: 0;
+  /* text-align: center; */
+  --green: rgb(56, 79, 38);
+  --green-dark: rgb(45, 63, 31);
+  --beige-dark: rgba(193, 148, 109, 1);
+  --beige: rgba(213, 179, 145, 1);
+  --beige-bg: rgb(213, 179, 145, 0.1);
+  --red: #EB0000;
+	--red-dark: #ab1a1a;
+  --navbar-height: 100px;
+}
+
+
+.App{
+  width: 100%
+}
+@media only screen and (max-width: 480px),
+	only screen and (max-device-width: 480px) {
+	:root{
+		--navbar-height: 120px
+	}
+}

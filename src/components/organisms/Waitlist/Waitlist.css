@@ -1,0 +1,41 @@
+.waitlist .heading{
+	font-size: 2rem;
+	font-weight: 500;
+}
+.waitlist .sub-heading{
+	font-size: 1.1rem;
+	font-weight: 500;
+	/* width: 40%; */
+	text-align: left;
+}
+.waitlist .input {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	border: 1px solid black;
+	border-radius: 35px;
+	padding: 5px 5px;
+	/* width: 40%; */
+	background-color: white;
+}
+.waitlist .input input {
+	padding: 15px 20px;
+	width: 100%;
+	outline: none;
+	border: none;
+	font-size: 16px;
+	border-radius: 25px;
+}
+.waitlist .input .button {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+
+@media only screen and (max-width: 480px),
+	only screen and (max-device-width: 480px){
+		.waitlist .sub-heading, .waitlist .input{
+			width: 100%;
+		}
+	}

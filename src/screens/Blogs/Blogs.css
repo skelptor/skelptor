@@ -1,0 +1,114 @@
+.blogs {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+}
+.blogs section {
+	position: relative;
+	/* width: 100vw; */
+	z-index: 2;
+	overflow: hidden;
+	width: 100%;
+}
+.blogs .section-1 {
+	margin-top: var(--navbar-height);
+	min-height: 100vh;
+	padding: 4rem;
+	gap: 2rem;
+	background-color: rgb(213, 179, 145, 0.1);
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	position: relative;
+}
+.blogs .section-1 .heading {
+	font-size: 3.5rem;
+	font-weight: 500;
+}
+.blogs .section-1 .sub-heading {
+	font-size: 1.5rem;
+	width: 60%;
+	font-weight: 500;
+}
+.blogs .section-1 .search {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+}
+.blogs .section-1 .search .input {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	border: 1px solid black;
+	border-radius: 35px;
+	padding: 5px 5px;
+	width: 20%;
+	background-color: white;
+	transition: 0.25s all;
+}
+.blogs .section-1 .search .input:has(input:focus) {
+	width: 30%;
+}
+.blogs .section-1 .search .input input {
+	padding: 15px 20px;
+	width: 100%;
+	outline: none;
+	border: none;
+	font-size: 20px;
+	border-radius: 25px;
+}
+.blogs .section-1 .search .input .button {
+	border-radius: 50%;
+	width: 50px;
+	height: 50px;
+}
+.blogs .section-1 .search .category {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+.blogs .section-1 .search .category .material-icons {
+	transition: 0.25s;
+}
+.blogs .section-1 .search .category.active .material-icons {
+	transform: rotate(180deg);
+	transition: 0.25s;
+}
+.blogs .section-1 .content {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+@media only screen and (max-width: 480px),
+	only screen and (max-device-width: 480px) {
+	.blogs .section-1 {
+		padding: 2rem;
+	}
+
+	.blogs .section-1 .heading {
+		font-size: 2.5rem;
+	}
+	.blogs .section-1 .sub-heading{
+		width: 100%;
+	}
+	.blogs .section-1 .search{
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 2rem;
+	}
+	.blogs .section-1 .search .input{
+		width: 100%;
+	}
+}

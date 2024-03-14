@@ -1,0 +1,70 @@
+.authform .MuiPaper-root {
+	border-radius: 5px;
+	/* padding: 15px; */
+	background-color: white;
+	position: relative;
+	width: 30%;
+	min-width: 300px;
+	max-width: 1000px;
+	padding: 0;
+	/* height: 100%; */
+}
+.form .MuiPaper-root .bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	height: 200px;
+}
+.authform .content{
+	width: 100%;
+	padding: 15px 40px 40px 40px;
+}
+.authform.forgot-password .content{
+	width: 100%;
+}
+.authform .content .title {
+	color: black;
+	font-size: 2.5rem;
+	font-weight: bold;
+	line-height: 3rem;
+	margin: 3rem 0;
+}
+.authform .content .link{
+	color: black;
+	font-weight: 500;
+}
+.authform .content .link:hover{
+	color: var(--red);
+}
+.form-group {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: 20px;
+}
+
+.authform ::-webkit-scrollbar {
+	display: none;
+}
+.link{
+	cursor: pointer;
+}
+@media only screen and (max-width: 480px),
+	only screen and (max-device-width: 480px){
+		.authform .MuiPaper-root{
+			width: 100%;
+			min-width: 300px;
+			margin: 0;
+			max-height: 100%;
+		}
+		.authform .content{
+			width: 90%;
+			padding: 50px 20px;
+		}
+		.authform .content .title{
+			margin: 3rem 0 2rem 0;
+		}
+		
+	}
