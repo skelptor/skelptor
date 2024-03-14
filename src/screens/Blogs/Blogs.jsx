@@ -7,7 +7,7 @@ import {
 	Typography,
 } from "@mui/material";
 import Button from "../../components/atoms/Button/Button";
-import BlogCard from "../../components/organisms/Blogcard/Blogcard";
+import BlogCard from "../../components/organisms/BlogCard/BlogCard";
 import CategoryMenu from "../../components/organisms/CategoryMenu/CategoryMenu";
 import { getBlogs } from "../../services/api";
 // import blogs from "../../assets/dev-data/blogs.json";
