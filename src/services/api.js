@@ -2,12 +2,13 @@ import axios from "axios";
 axios.defaults.withCredentials = true;
 
 const api = axios.create({
-	baseURL: "http:///localhost:1337/api/",
-	// baseURL: "https://gtv.onrender.com/api/v1",
+	// baseURL: "http://localhost:1337/api/",
+	baseURL: "https://truthful-book-194de6901c.strapiapp.com/api/",
 	withCredentials: true,
 });
 const apiNoCredentials = axios.create({
-	baseURL: "http:///localhost:1337/api/",
+	// baseURL: "http://localhost:1337/api/",
+	baseURL: "https://truthful-book-194de6901c.strapiapp.com/api/",
 });
 
 api.interceptors.request.use((config) => {
