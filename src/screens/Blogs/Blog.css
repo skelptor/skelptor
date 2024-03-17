@@ -11,7 +11,7 @@
 	/* width: 100vw; */
 	z-index: 2;
 	overflow: hidden;
-	width: 100%;
+	width: 80%;
 }
 .blog .section-1 {
 	margin-top: var(--navbar-height);
@@ -29,6 +29,13 @@
 .blog .section-1 .heading{
 	font-size: 3rem;
 	font-weight: 500;
+}
+.blog .row{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+	gap: 20px;
 }
 .blog .section-1 .cover{
 	width: 100%;
@@ -52,10 +59,12 @@
 	font-weight: 500;
 }
 .blog .section-1 .desc{
-	font-size: 1.1rem;
+	font-size: 1.2rem;
+	line-height: 2rem;
 }
 .blog .section-1 .text{
-	font-size: 1.1rem;
+	font-size: 1.2rem;
+	line-height: 2rem;
 }
 .blog .section-1 .text h1{
 	font-size: 2.5rem;
@@ -73,7 +82,8 @@
 	line-height: 2.5rem;
 }
 .blog .section-1 .text p{
-	font-size: 1.1rem;
+	font-size: 1.2rem;
+	line-height: 2rem;
 }
 .blog .section-1 .text ol, .blog .section-1 .text ul{
 	list-style-position: inside;
@@ -102,6 +112,7 @@
 	only screen and (max-device-width: 480px){
 		.blog .section-1, .blog .section-2{
 			padding: 2rem;
+			width: 100%;
 		}
 		.blog .section-1 .heading{
 			font-size: 2rem;

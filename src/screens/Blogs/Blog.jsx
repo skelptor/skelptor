@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import Markdown from "marked-react";
+import {
+	Chip,
+} from "@mui/material";
 import "./Blog.css";
 // import BlogCard from "../../components/organisms/Blogcard/Blogcard";
 import { getBlog } from "../../services/api";
 import { alert } from "../../components/molecules/CustomAlert/alert";
+import dayjs from "dayjs";
+import calendar from "dayjs/plugin/calendar";
+dayjs.extend(calendar);
 
 const Blog = () => {
 	const params = useParams();
@@ -34,6 +40,19 @@ const Blog = () => {
 				{blog && (
 					<>
 						<div className="heading">{blog.attributes.title}</div>
+						<div className="row">
+							<Chip
+								label={
+									blog.attributes.category.data.attributes
+										.name
+								}
+								variant="outlined"
+							></Chip>
+							<p>{blog.attributes.readTime}</p>
+							<p>{ dayjs(blog.attributes.createdAt).calendar(
+							dayjs(blog.attributes.createdAt)) }</p>
+						</div>
+
 						<div className="cover">
 							<img src={`${blog.attributes.cover}`} alt="" />
 						</div>
@@ -45,12 +64,8 @@ const Blog = () => {
 										<img src={section.img} alt="" />
 									</div>
 								) : (
-									<div
-										key={i}
-										className={`${section.type}`}
-										
-									>
-											<Markdown>{ section.content }</Markdown>
+									<div key={i} className={`${section.type}`}>
+										<Markdown>{section.content}</Markdown>
 									</div>
 								)
 							)}
