@@ -14,7 +14,7 @@ import {
 import { NavLink } from "react-router-dom";
 import "./CategoryMenu.css"
 
-const CategoryMenu = ({ anchorEl, handleMenuClose }) => {
+const CategoryMenu = ({ anchorEl, handleMenuClose, onSelect }) => {
 	const menuOpen = Boolean(anchorEl);
 
 	const categories = [
@@ -98,8 +98,8 @@ const CategoryMenu = ({ anchorEl, handleMenuClose }) => {
 							color: "inherit",
 						},
 					}}
-					key={"help"}
-					// onClick={item.}
+					key={item.name}
+					onClick={() => onSelect(item.name.toLowerCase())}
 				>
 					<div className="img">
 						<img src={"./assets/imgs/" + item.img} alt="" />

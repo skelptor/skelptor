@@ -33,7 +33,9 @@
 	font-size: 1.5rem;
 	width: 60%;
 	font-weight: 500;
+
 }
+
 .blogs .section-1 .search {
 	width: 100%;
 	display: flex;
@@ -41,7 +43,15 @@
 	align-items: center;
 	justify-content: space-between;
 }
-.blogs .section-1 .search .input {
+.blogs .section-1 .search .left-col{
+	width: 50%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 20px;
+}
+.blogs .section-1 .search .left-col .input {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -49,14 +59,14 @@
 	border: 1px solid black;
 	border-radius: 35px;
 	padding: 5px 5px;
-	width: 20%;
+	width: 40%;
 	background-color: white;
 	transition: 0.25s all;
 }
-.blogs .section-1 .search .input:has(input:focus) {
-	width: 30%;
+.blogs .section-1 .search .left-col .input:has(input:focus) {
+	width: 60%;
 }
-.blogs .section-1 .search .input input {
+.blogs .section-1 .search .left-col .input input {
 	padding: 15px 20px;
 	width: 100%;
 	outline: none;
@@ -64,11 +74,12 @@
 	font-size: 20px;
 	border-radius: 25px;
 }
-.blogs .section-1 .search .input .button {
+.blogs .section-1 .search .left-col .input .button {
 	border-radius: 50%;
 	width: 50px;
 	height: 50px;
 }
+
 .blogs .section-1 .search .category {
 	display: flex;
 	flex-direction: row;

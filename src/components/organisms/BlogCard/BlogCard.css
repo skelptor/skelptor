@@ -12,6 +12,7 @@
 	height: 380px;
 	overflow: hidden;
 	padding: 10px;
+	position: relative;
 }
 .blog-card .img img {
 	width: 100%;
