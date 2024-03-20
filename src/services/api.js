@@ -3,12 +3,12 @@ axios.defaults.withCredentials = true;
 
 const api = axios.create({
 	// baseURL: "http://localhost:1337/api/",
-	baseURL: "https://truthful-book-194de6901c.strapiapp.com/api/",
+	baseURL: "http://13.233.201.134:1337/admin/api/",
 	withCredentials: true,
 });
 const apiNoCredentials = axios.create({
 	// baseURL: "http://localhost:1337/api/",
-	baseURL: "https://truthful-book-194de6901c.strapiapp.com/api/",
+	baseURL: "http://13.233.201.134:1337/api",
 });
 
 api.interceptors.request.use((config) => {
@@ -42,8 +42,7 @@ export const resetPassword = (payload, token) =>
 export const updatePassword = (payload) =>
 	api.post("./auth/updatePassword", payload);
 
-export const getBlogs = () =>
-	apiNoCredentials.get(`./blogs`);
+export const getBlogs = () => apiNoCredentials.get(`./blogs?populate=category`);
 export const getBlog = (blogId) =>
 	apiNoCredentials.get(`./blogs/${blogId}?populate=*`);
 export const createBlog = (payload) => api.post("./blogs", payload);
