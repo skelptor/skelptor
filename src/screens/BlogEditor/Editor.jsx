@@ -74,13 +74,13 @@ const Editor = ({
 			let coverCopy = cover;
 			form.append(`files`, cover);
 			let res = await uploadImages(form);
-			coverCopy = "http://localhost:1337" + res.data[0].url;
+			coverCopy = res.data[0].url;
 			// contents.forEach(content => content.img = res.data)
 			for (const content of contentsCopy) {
 				// const form = new FormData();
 				form.append("files", content.img);
 				res = await uploadImages(form);
-				content.img = "http://localhost:1337" + res.data[0].url;
+				content.img = res.data[0].url;
 			}
 
 			// setContents(contentsCopy);

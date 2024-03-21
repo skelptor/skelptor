@@ -18,7 +18,6 @@ const AuthForm = ({ open, user, login, logout, onClose }) => {
 	const [signup, setSignup] = useState(false);
 	const [name, setName] = useState("");
 	const [email, setEmail] = useState("");
-	const [phone, setPhone] = useState(0);
 	const [password, setPassword] = useState("");
 	const [passwordConfirm, setPasswordConfirm] = useState("");
 
@@ -39,9 +38,8 @@ const AuthForm = ({ open, user, login, logout, onClose }) => {
 				alert({ message: "Please provide a Name", type: "error" });
 			} else {
 				const payload = {
-					name: name.trim(),
+					username: name.trim(),
 					email,
-					phone,
 					password,
 					passwordConfirm,
 				};
@@ -170,15 +168,7 @@ const AuthForm = ({ open, user, login, logout, onClose }) => {
 							required={true}
 							onInput={(e) => setEmail(e.target.value)}
 						></MUITextfield>
-						{signup && (
-							<MUITextfield
-								label={"Phone Number"}
-								fullWidth={true}
-								required={true}
-								type="number"
-								onInput={(e) => setPhone(e.target.value)}
-							></MUITextfield>
-						)}
+						
 
 						<MUITextfield
 							label={"Password"}
