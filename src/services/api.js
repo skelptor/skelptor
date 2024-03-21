@@ -3,12 +3,12 @@ axios.defaults.withCredentials = true;
 
 const api = axios.create({
 	// baseURL: "http://localhost:1337/api/",
-	baseURL: "https://api.skelptor.com",
+	baseURL: "https://api.skelptor.com/api/",
 	withCredentials: true,
 });
 const apiNoCredentials = axios.create({
 	// baseURL: "http://localhost:1337/api/",
-	baseURL: "https://api.skelptor.com",
+	baseURL: "https://api.skelptor.com/api/",
 });
 
 api.interceptors.request.use((config) => {
