@@ -7,6 +7,8 @@ import {
 	Typography,
 } from "@mui/material";
 import Button from "../../components/atoms/Button/Button";
+import { createSubscriber } from "../../services/api";
+import { alert } from "../../components/molecules/CustomAlert/alert";
 
 const Home = () => {
 
@@ -70,6 +72,26 @@ const Home = () => {
 	];
 
 	const { innerWidth: width, innerHeight: height } = window;
+
+	const [email, setEmail] = useState();
+
+	const handleSubmit = async () => {
+		const payload = { data: { email } };
+		try {
+			const res = await createSubscriber(payload);
+			
+			alert({
+				message: "Than you for subscribing with us.",
+				type: "success",
+			});
+		} catch (err) {
+			alert({
+				message: err.response.data.error.message,
+				type: "error",
+			});
+			console.log(err);
+		}
+	};
 
 	return (
 		<div className="home">
@@ -259,6 +281,8 @@ const Home = () => {
 							<input
 								type="email"
 								placeholder="Enter your email to subscribe"
+								value={email}
+								onInput={e => setEmail(e.target.value)}
 							/>
 							<Button
 								color={"green"}
@@ -268,6 +292,7 @@ const Home = () => {
 										arrow_forward
 									</span>
 								}
+								onClick={handleSubmit}
 							></Button>
 						</div>
 					</div>

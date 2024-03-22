@@ -9,7 +9,27 @@ import {
 } from "@mui/material";
 import Button from '../../atoms/Button/Button';
 import "./Waitlist.css";
-const Waitlist = ({open, onClose}) => {
+import { createWaitlist } from '../../../services/api';
+import { alert } from '../../molecules/CustomAlert/alert';
+const Waitlist = ({ open, onClose }) => {
+	
+	const [email, setEmail] = useState();
+
+	const handleSubmit = async () => {
+		const payload = { data: { email } };
+		try {
+			const res = await createWaitlist(payload);
+			onClose();
+			alert({message: "You have successfully joined our Waitlist.", type: "success"})
+		}
+		catch (err) {
+			alert({
+				message: err.response.data.error.message,
+				type: "error",
+			});
+			console.log(err);
+		}
+	}
 	return (
 		<Dialog open={open} onClose={onClose} className="waitlist">
 			<div className="bg">
@@ -49,6 +69,8 @@ const Waitlist = ({open, onClose}) => {
 					<input
 						type="email"
 						placeholder="Enter your email to join the waitlist"
+						value={email}
+						onInput={e => setEmail(e.target.value)}
 					/>
 
 					<Button
@@ -59,6 +81,7 @@ const Waitlist = ({open, onClose}) => {
 								arrow_forward
 							</span>
 						}
+						onClick={handleSubmit}
 					></Button>
 				</div>
 			</DialogContent>
