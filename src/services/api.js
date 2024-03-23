@@ -52,3 +52,6 @@ export const uploadImages = (payload) =>
 			"Content-Type": "multipart/form-data",
 		},
 	});
+export const createWaitlist = (payload) => apiNoCredentials.post('./waitlists', payload);
+export const createSubscriber = (payload) =>
+	apiNoCredentials.post("./subscribers", payload);
