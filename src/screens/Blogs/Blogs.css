@@ -119,7 +119,14 @@
 		align-items: flex-start;
 		gap: 2rem;
 	}
-	.blogs .section-1 .search .input{
+	.blogs .section-1 .search .left-col{
 		width: 100%;
 	}
+	.blogs .section-1 .search .left-col .input{
+		width: 80%;
+	}
+	.blogs .section-1 .search .left-col .input:has(input:focus) {
+	width: 100%;
+}
+	
 }

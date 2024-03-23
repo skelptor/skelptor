@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import {
 	Accordion,
@@ -9,6 +10,7 @@ import {
 import Button from "../../components/atoms/Button/Button";
 import { createSubscriber } from "../../services/api";
 import { alert } from "../../components/molecules/CustomAlert/alert";
+import Waitlist from "../../components/organisms/Waitlist/Waitlist";
 
 const Home = () => {
 
@@ -74,9 +76,14 @@ const Home = () => {
 	const { innerWidth: width, innerHeight: height } = window;
 
 	const [email, setEmail] = useState();
+	const navigate = useNavigate();
+	const [waitlistOpen, setWaitlistOpen] = useState(false);
 
 	const handleSubmit = async () => {
 		const payload = { data: { email } };
+		if (!email) {
+			return alert({ message: "Please enter a valid email", type: "error" });
+		}
 		try {
 			const res = await createSubscriber(payload);
 			
@@ -111,12 +118,14 @@ const Home = () => {
 								innerText={"Skelp.ai"}
 								variant={"filled"}
 								size={"large"}
+								onClick={() => navigate("/ai")}
 							></Button>
 							<Button
 								color="black"
 								size={"large"}
 								innerText={"Resources"}
 								variant={"text"}
+								onClick={() => navigate("/blogs")}
 							></Button>
 						</div>
 					</div>
@@ -191,7 +200,9 @@ const Home = () => {
 								innerText={"Join Waitlist"}
 								variant={"filled"}
 								size={"large"}
+								onClick={() => setWaitlistOpen(true)}
 							></Button>
+							<Waitlist open={waitlistOpen} onClose={() => setWaitlistOpen(false)}></Waitlist>
 						</div>
 					</div>
 				</div>
@@ -282,7 +293,7 @@ const Home = () => {
 								type="email"
 								placeholder="Enter your email to subscribe"
 								value={email}
-								onInput={e => setEmail(e.target.value)}
+								onInput={(e) => setEmail(e.target.value)}
 							/>
 							<Button
 								color={"green"}
@@ -296,13 +307,13 @@ const Home = () => {
 							></Button>
 						</div>
 					</div>
-					{ (
+					{
 						<div className="right-col">
 							<div className="img">
 								<img src="./assets/imgs/home3.png" alt="" />
 							</div>
 						</div>
-					)}
+					}
 				</div>
 			</section>
 		</div>

@@ -17,6 +17,12 @@ const Waitlist = ({ open, onClose }) => {
 
 	const handleSubmit = async () => {
 		const payload = { data: { email } };
+		if (!email) {
+			return alert({
+				message: "Please enter a valid email",
+				type: "error",
+			});
+		}
 		try {
 			const res = await createWaitlist(payload);
 			onClose();
@@ -57,7 +63,7 @@ const Waitlist = ({ open, onClose }) => {
 				</IconButton>
 			</DialogTitle>
 
-			<DialogContent sx={{ zIndex: 1, display: "flex", flexDirection: 'column', gap: '1rem' }}>
+			<DialogContent sx={{ zIndex: 1, display: "flex", flexDirection: 'column', gap: '1rem', p: "4rem 2rem" }}>
 				<div className="heading">Join the Waitlist</div>
 				<div className="sub-heading">
 					

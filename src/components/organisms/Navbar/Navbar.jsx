@@ -46,9 +46,6 @@ const Navbar = ({}) => {
 	};
 	const [waitlistOpen, setWaitlistOpen] = useState(false);
 	
-
-	
-
 	const handleLinkClick = () => {
 		// setMenuOpen(false);
 		handleDrawerClose();

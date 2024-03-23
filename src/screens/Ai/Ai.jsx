@@ -9,6 +9,12 @@ const Ai = () => {
 
 	const handleSubmit = async () => {
 		const payload = { data: { email } };
+		if (!email) {
+			return alert({
+				message: "Please enter a valid email",
+				type: "error",
+			});
+		}
 		try {
 			const res = await createWaitlist(payload);
 			
